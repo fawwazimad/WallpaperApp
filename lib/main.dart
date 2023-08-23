@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:starterapp/pages/home/home_screen.dart';
-import 'package:starterapp/pages/home/search_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'SegueUI',
       ),
-      home: const MyHomePage(),
+      home: const HomeScreen(),
     );
   }
 }
@@ -37,11 +36,6 @@ class _MyHomePageState extends State<MyHomePage> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-        '/search': (context) => SearchScreen(),
-      },
     );
   }
 }
