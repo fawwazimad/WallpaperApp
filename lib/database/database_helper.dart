@@ -9,7 +9,6 @@ class DatabaseHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-
     _database = await _initDB('favorite_wallpapers.db');
     return _database!;
   }
