@@ -11,7 +11,7 @@ import '../../database/database_helper.dart';
 
 class WallpaperDetailsScreen extends StatelessWidget {
   final String imageUrl; // URL of the selected wallpaper
-  final int imageId;
+  final dynamic imageId;
 
   const WallpaperDetailsScreen({
     super.key,
@@ -68,10 +68,11 @@ class WallpaperDetailsScreen extends StatelessWidget {
                     onPressed: () async {
                       Map<String, dynamic> favoriteData = {
                         'imageUrl': imageUrl,
-                        'ID': imageId,
+                        'id': imageId,
                       };
                       int result = await DatabaseHelper.instance
                           .insertFavorite(favoriteData);
+
                       if (result > 0) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(

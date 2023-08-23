@@ -5,6 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:http/http.dart' as http;
+import 'package:starterapp/pages/home/search_screen.dart';
 import 'package:starterapp/pages/home/wallpaper_details_screen.dart';
 
 import 'favorite_screen.dart';
@@ -53,7 +54,12 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              Navigator.pushNamed(context, '/search');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SearchScreen(),
+                ),
+              );
             },
           ),
           IconButton(
@@ -62,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => FavoriteScreen(),
+                  builder: (context) => const FavoriteScreen(),
                 ),
               );
             },

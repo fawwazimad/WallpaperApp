@@ -46,7 +46,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
             itemBuilder: (context, index) {
               final imageUrl = favorites[index]['imageUrl'];
               final imageId = favorites[index]['id'];
-              print(imageId);
               return GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -54,7 +53,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       MaterialPageRoute(
                         builder: (context) => WallpaperDetailsScreen(
                           imageUrl: favorites[index]['imageUrl'],
-                          imageId: favorites[index]['ID'],
+                          imageId: favorites[index]['id'],
                         ),
                       ),
                     );
